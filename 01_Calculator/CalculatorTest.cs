@@ -70,6 +70,12 @@ namespace _01_Calculator
             Assert.AreEqual(120, Calculator.Factorial(5));
             Assert.AreEqual(720, Calculator.Factorial(6));
         }
+        
+        [TestMethod]
+        public void LasseTest()
+        {
+            Assert.AreEqual(10.2M, Calculator.Add(6.8M, 3.4M));
+        }
 
     }
 }
