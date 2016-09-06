@@ -6,6 +6,7 @@ namespace _01_Calculator
     [TestClass]
     public class CalculatorTest
     {
+
         [TestMethod]
         public void Add()
         {
@@ -13,16 +14,18 @@ namespace _01_Calculator
             Assert.AreEqual(4, Calculator.Add(2, 2));
             Assert.AreEqual(8, Calculator.Add(2, 6));
         }
+
         [TestMethod]
         public void Subtract()
         {
             Assert.AreEqual(6, Calculator.Subtract(10, 4));
         }
+
         [TestMethod]
         public void Sum()
         {
             //Arrange
-            int[] numbers = new int[] { };
+            int[] numbers = new int[3];
             Assert.AreEqual(0, Calculator.Sum(numbers));
 
             numbers[0] = 7;
@@ -32,30 +35,41 @@ namespace _01_Calculator
             numbers[1] = 11;
             Assert.AreEqual(18, Calculator.Sum(numbers));
 
+            numbers[0] = 50;
+            numbers[1] = 50;
+            numbers[2] = 50;
+            Assert.AreEqual(150, Calculator.Sum(numbers));
+
         }
+
         [TestMethod]
         public void Multiply()
         {
-            //It multiplies two numbers
-            //It multiplies several numbers
-            throw new NotImplementedException();
+            Assert.AreEqual(25, Calculator.Multiply(5, 5));
+            Assert.AreEqual(0, Calculator.Multiply(0, 7));
         }
+
         [TestMethod]
         public void Power()
         {
-            //It raises one number to the power of another number
-            throw new NotImplementedException();
+            Assert.AreEqual(27, Calculator.Power(3, 3));
+            Assert.AreEqual(-243, Calculator.Power(-3, 5));
+            Assert.AreEqual(0, Calculator.Power(0, 1337));
         }
+
         [TestMethod]
         public void Factorial()
         {
-            //# http://en.wikipedia.org/wiki/Factorial
-            //  it "computes the factorial of 0"
-            //  it "computes the factorial of 1"
-            //  it "computes the factorial of 2"
-            //  it "computes the factorial of 5"
-            //  it "computes the factorial of 10"
-            throw new NotImplementedException();
+            Assert.AreEqual(1,   Calculator.Factorial(-28));
+            Assert.AreEqual(1,   Calculator.Factorial(-1));
+            Assert.AreEqual(1,   Calculator.Factorial(0));
+            Assert.AreEqual(1,   Calculator.Factorial(1));
+            Assert.AreEqual(2,   Calculator.Factorial(2));
+            Assert.AreEqual(6,   Calculator.Factorial(3));
+            Assert.AreEqual(24,  Calculator.Factorial(4));
+            Assert.AreEqual(120, Calculator.Factorial(5));
+            Assert.AreEqual(720, Calculator.Factorial(6));
         }
+
     }
 }
